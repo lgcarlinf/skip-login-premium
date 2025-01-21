@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Modal Remover",
+    "version": "1.0",
+    "description": "Removes modal and backdrop elements and restores scroll",
+    "permissions": [
+        "scripting",
+        "activeTab"
+      ],
+    "action": {
+      "default_icon": {
+        "16": "./assets/star.png",
+        "48": "./assets/star.png",
+        "128": "./assets/star.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
