@@ -1,7 +1,7 @@
 chrome.action.onClicked.addListener(async (tab) => {
   try {
     await chrome.scripting.executeScript({
-      target: { tabId: tab.id },
+      target: { tabId: tab.id ?? 0 },
       func: () => {
         const modal = document.querySelector(".tp-modal");
 
@@ -10,13 +10,13 @@ chrome.action.onClicked.addListener(async (tab) => {
         );
 
         if (modal ?? modalComponent) {
-          modal.remove();
+          modal?.remove();
         }
 
         const backdrop = document.querySelector(".tp-backdrop");
         const backdropComponent = document.querySelector(".tp-active");
         if (backdrop ?? backdropComponent) {
-          backdrop.remove();
+          backdrop?.remove();
         }
 
         document.body.style.overflow = "scroll";
